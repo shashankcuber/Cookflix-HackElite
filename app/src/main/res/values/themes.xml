@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Cookflix" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_200</item>
+        <item name="colorSecondaryVariant">@color/blue_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Text Header -->
+    <style name="Text.Header.Poppins.16" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_800</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- Text SubHeader 1 -->
+    <style name="Text.SubHeader.1.Poppins.12" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_600</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <!-- Text SubHeader 2 -->
+    <style name="Text.SubHeader.2.Poppins.8" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_600</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_8</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>
