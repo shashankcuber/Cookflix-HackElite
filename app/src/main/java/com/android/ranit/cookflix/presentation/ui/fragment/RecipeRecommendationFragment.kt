@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.ranit.cookflix.R
@@ -81,13 +82,17 @@ class RecipeRecommendationFragment : Fragment() {
         mViewModel.mRecommendationsMLD.observe(viewLifecycleOwner) {
             when(it.state) {
                 State.LOADING -> {
-                    //mBinding.shimmerIngredients.visibility = View.VISIBLE
-                    //mBinding.shimmerIngredients.startShimmer()
+                    mBinding.shimmerFoodItems.visibility = View.VISIBLE
+                    mBinding.shimmerFoodItems.startShimmer()
+                    mBinding.tvHeader.visibility = View.INVISIBLE
+                    mBinding.rvRecommendation.visibility = View.INVISIBLE
                 }
 
                 State.SUCCESS -> {
-                   // mBinding.shimmerIngredients.stopShimmer()
-                   // mBinding.shimmerIngredients.visibility = View.GONE
+                    mBinding.shimmerFoodItems.stopShimmer()
+                    mBinding.shimmerFoodItems.visibility = View.GONE
+                    mBinding.tvHeader.visibility = View.VISIBLE
+                    mBinding.rvRecommendation.visibility = View.VISIBLE
 
                     it.data?.let { data ->
                         val recommendationList: ArrayList<Recommendation> = ArrayList(data.Recommendation_response)
@@ -96,7 +101,9 @@ class RecipeRecommendationFragment : Fragment() {
                 }
 
                 State.ERROR -> {
-                   // mBinding.shimmerIngredients.visibility = View.GONE
+                   mBinding.shimmerFoodItems.visibility = View.GONE
+                    mBinding.tvHeader.visibility = View.INVISIBLE
+                    mBinding.rvRecommendation.visibility = View.INVISIBLE
 
                     it.message?.let { message ->
                         Toast.makeText(

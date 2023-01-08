@@ -76,6 +76,8 @@ class HomeFragment : Fragment() {
                 State.LOADING -> {
                     mBinding.shimmerFoodItems.visibility = View.VISIBLE
                     mBinding.shimmerFoodItems.startShimmer()
+                    mBinding.tvHeader.visibility = View.INVISIBLE
+                    mBinding.rvFoodItems.visibility = View.INVISIBLE
                 }
 
                 State.SUCCESS -> {
