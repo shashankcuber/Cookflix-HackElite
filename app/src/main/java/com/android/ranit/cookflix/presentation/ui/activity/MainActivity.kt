@@ -3,6 +3,7 @@ package com.android.ranit.cookflix.presentation.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -49,6 +50,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         Log.d(tag, "initViews() called")
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         // Initializing Nav-Host Fragment
         mNavHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
