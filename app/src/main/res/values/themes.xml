@@ -81,4 +81,12 @@
         <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <style name="AutoCompleteTextView.Background" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:background">@drawable/bg_autocomplete</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/red_200</item>
+        <item name="android:textColorHint">@color/black_400</item>
+    </style>
 </resources>

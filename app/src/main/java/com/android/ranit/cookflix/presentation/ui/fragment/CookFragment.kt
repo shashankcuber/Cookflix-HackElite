@@ -147,6 +147,7 @@ class CookFragment : Fragment() {
                     mSelectedIngredientsList.add(selection)
                     mIngredientsAdapter.setData(mSelectedIngredientsList)
                 }
+                mBinding.acIngredients.text = null
             }
 
         mBinding.btnRecommend.setOnClickListener {
