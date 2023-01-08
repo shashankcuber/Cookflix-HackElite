@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tv_header"
+        android:id="@+id/tv_header_d"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         app:layout_constraintWidth_percent="0.75"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/auto_complete_ingredient"
+        android:id="@+id/auto_complete_ingredient_d"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
         android:layout_marginTop="@dimen/dp_16"
@@ -24,10 +24,10 @@
         android:background="@drawable/bg_shimmer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_header" />
+        app:layout_constraintTop_toBottomOf="@id/tv_header_d" />
 
     <TextView
-        android:id="@+id/tv_selected_ingredients"
+        android:id="@+id/tv_selected_ingredients_d"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         android:layout_marginTop="@dimen/dp_64"
@@ -35,7 +35,7 @@
         app:layout_constraintHeight_percent="0.04"
         android:background="@drawable/bg_shimmer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/auto_complete_ingredient" />
+        app:layout_constraintTop_toBottomOf="@id/auto_complete_ingredient_d" />
 
     <TextView
         android:id="@+id/tv_one"
@@ -46,7 +46,7 @@
         app:layout_constraintHeight_percent="0.045"
         android:background="@drawable/bg_shimmer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients_d" />
 
     <TextView
         android:id="@+id/tv_two"
@@ -58,7 +58,7 @@
         app:layout_constraintHeight_percent="0.045"
         android:background="@drawable/bg_shimmer"
         app:layout_constraintStart_toEndOf="@id/tv_one"
-        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients_d" />
 
     <TextView
         android:id="@+id/tv_three"
@@ -70,7 +70,7 @@
         app:layout_constraintHeight_percent="0.045"
         android:background="@drawable/bg_shimmer"
         app:layout_constraintStart_toEndOf="@id/tv_two"
-        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients_d" />
 
     <TextView
         android:id="@+id/tv_four"
