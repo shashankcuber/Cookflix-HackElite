@@ -79,6 +79,7 @@ class CookFragment : Fragment() {
 
     private fun attachObserver() {
         Log.d(fragmentTag, "attachObserver() called")
+        // Ingredients
         mViewModel.mIngredientsMLD.observe(viewLifecycleOwner) {
             when(it.state) {
                 State.LOADING -> {
@@ -131,6 +132,37 @@ class CookFragment : Fragment() {
                 }
             }
         }
+
+        // Recommendations
+        mViewModel.mRecommendationsMLD.observe(viewLifecycleOwner) {
+            when(it.state) {
+                State.LOADING -> {
+                    mBinding.shimmerIngredients.visibility = View.VISIBLE
+                    mBinding.shimmerIngredients.startShimmer()
+                }
+
+                State.SUCCESS -> {
+                    mBinding.shimmerIngredients.stopShimmer()
+                    mBinding.shimmerIngredients.visibility = View.GONE
+
+                    it.data?.let { data ->
+                        val  = data.Recommendation_response
+                    }
+                }
+
+                State.ERROR -> {
+                    mBinding.shimmerIngredients.visibility = View.GONE
+
+                    it.message?.let { message ->
+                        Toast.makeText(
+                            activity,
+                            message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+            }
+        }
     }
 
     private fun attachListeners() {
@@ -147,7 +179,8 @@ class CookFragment : Fragment() {
             }
 
         mBinding.btnRecommend.setOnClickListener {
-
+            val querySelectedIngredients = mSelectedIngredientsList.toString()
+            mViewModel.getRecommendations(querySelectedIngredients)
         }
     }
 

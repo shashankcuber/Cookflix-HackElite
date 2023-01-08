@@ -2,6 +2,7 @@ package com.android.ranit.cookflix.presentation.di
 
 import com.android.ranit.cookflix.domain.usecase.GetFoodItemsUseCase
 import com.android.ranit.cookflix.domain.usecase.GetIngredientsUseCase
+import com.android.ranit.cookflix.domain.usecase.GetRecommendationUseCase
 import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModelFactory
 import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModelFactory
 import dagger.Module
@@ -23,8 +24,10 @@ class HiltViewModelFactoryModule {
 
     @Singleton
     @Provides
-    fun provideIngredientsViewModelFactory(getIngredientsUseCase: GetIngredientsUseCase)
-            : IngredientsViewModelFactory {
-        return IngredientsViewModelFactory(getIngredientsUseCase)
+    fun provideIngredientsViewModelFactory(
+        getIngredientsUseCase: GetIngredientsUseCase,
+        getRecommendationUseCase: GetRecommendationUseCase
+    ): IngredientsViewModelFactory {
+        return IngredientsViewModelFactory(getIngredientsUseCase, getRecommendationUseCase)
     }
 }
