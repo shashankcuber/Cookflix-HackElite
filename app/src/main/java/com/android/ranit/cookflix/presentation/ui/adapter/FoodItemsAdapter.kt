@@ -1,8 +1,10 @@
 package com.android.ranit.cookflix.presentation.ui.adapter
 
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.IdRes
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +16,7 @@ import com.bumptech.glide.Glide
 class FoodItemsAdapter: RecyclerView.Adapter<FoodItemsAdapter.ViewHolderFoodItem>() {
     private val tag = FoodItemsAdapter::class.simpleName
     private val mArrayListFoodItem = ArrayList<Result>()
+    var onItemClickCallback: ((Result?, Int) -> Unit)? = null
 
     fun setData(newFoodItemList: List<Result>) {
         Log.d(tag, "setData() called of size = ${newFoodItemList.size}")
@@ -63,6 +66,10 @@ class FoodItemsAdapter: RecyclerView.Adapter<FoodItemsAdapter.ViewHolderFoodItem
 
             binding.tvLevel.text = computeCookingLevel(itemSize, binding)
             binding.tvIngredients.text = "$itemSize ingredients needed"
+
+            itemView.setOnClickListener {
+                onItemClickCallback?.invoke(result, mArrayListFoodItem.indexOf(result))
+            }
         }
     }
 

@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.IdRes
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.ranit.cookflix.R
 import com.android.ranit.cookflix.data.utils.State
@@ -53,6 +56,11 @@ class HomeFragment : Fragment() {
         mBinding.rvFoodItems.apply {
             adapter = mFoodItemsAdapter
             layoutManager = LinearLayoutManager(activity)
+
+            mFoodItemsAdapter.onItemClickCallback = { data, position ->
+                Log.e(fragmentTag, "onItemClickCallback: position = $position && data = $data")
+                Navigation.findNavController(requireView()).navigate(R.id.action_homeFragment_to_foodDetailsFragment)
+            }
         }
     }
 

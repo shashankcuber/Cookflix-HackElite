@@ -146,7 +146,8 @@ class CookFragment : Fragment() {
                     mBinding.shimmerIngredients.visibility = View.GONE
 
                     it.data?.let { data ->
-                        val  = data.Recommendation_response
+                        val recommendationList = data.Recommendation_response
+                        //TODO
                     }
                 }
 
@@ -163,6 +164,7 @@ class CookFragment : Fragment() {
                 }
             }
         }
+
     }
 
     private fun attachListeners() {
