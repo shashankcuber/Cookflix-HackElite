@@ -21,5 +21,12 @@ def get_food_list(request):
     except Exception as e:
         return Response({"Error message":e},status=status.HTTP_400_BAD_REQUEST)
     
+@api_view(('GET',))
+def get_ingrideints(request):
+    try:
+        return Response({"Result": list(pd.read_json('./data/ingredients.json')['ingredients'].values)}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"Error message":e},status=status.HTTP_400_BAD_REQUEST)
+
 
 

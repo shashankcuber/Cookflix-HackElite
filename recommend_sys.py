@@ -98,6 +98,3 @@ def rec_sys(ingredients, N=5):
     recommendations = get_recommendations(N, scores)
     return recommendations
 
-
-def get_all_ingredients():
-    return list(pd.read_json('./data/ingredients.json')['ingredients'].values)
