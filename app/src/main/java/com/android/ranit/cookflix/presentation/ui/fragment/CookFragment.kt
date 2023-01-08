@@ -9,9 +9,11 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.ranit.cookflix.R
+import com.android.ranit.cookflix.data.cache.DataManager
 import com.android.ranit.cookflix.data.utils.State
 import com.android.ranit.cookflix.databinding.FragmentCookBinding
 import com.android.ranit.cookflix.presentation.ui.activity.MainActivity
@@ -132,39 +134,6 @@ class CookFragment : Fragment() {
                 }
             }
         }
-
-        // Recommendations
-        mViewModel.mRecommendationsMLD.observe(viewLifecycleOwner) {
-            when(it.state) {
-                State.LOADING -> {
-                    mBinding.shimmerIngredients.visibility = View.VISIBLE
-                    mBinding.shimmerIngredients.startShimmer()
-                }
-
-                State.SUCCESS -> {
-                    mBinding.shimmerIngredients.stopShimmer()
-                    mBinding.shimmerIngredients.visibility = View.GONE
-
-                    it.data?.let { data ->
-                        val recommendationList = data.Recommendation_response
-                        //TODO
-                    }
-                }
-
-                State.ERROR -> {
-                    mBinding.shimmerIngredients.visibility = View.GONE
-
-                    it.message?.let { message ->
-                        Toast.makeText(
-                            activity,
-                            message,
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                }
-            }
-        }
-
     }
 
     private fun attachListeners() {
@@ -181,8 +150,8 @@ class CookFragment : Fragment() {
             }
 
         mBinding.btnRecommend.setOnClickListener {
-            val querySelectedIngredients = mSelectedIngredientsList.toString()
-            mViewModel.getRecommendations(querySelectedIngredients)
+            DataManager.setIngredientData(mSelectedIngredientsList)
+            Navigation.findNavController(requireView()).navigate(R.id.action_cookFragment_to_recipeRecommendationFragment)
         }
     }
 

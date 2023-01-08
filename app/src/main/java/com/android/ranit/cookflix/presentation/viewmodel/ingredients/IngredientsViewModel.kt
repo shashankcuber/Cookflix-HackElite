@@ -12,8 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class IngredientsViewModel(
-    private val getIngredientsUseCase: GetIngredientsUseCase,
-    private val getRecommendationUseCase: GetRecommendationUseCase
+    private val getIngredientsUseCase: GetIngredientsUseCase
 ): ViewModel() {
     val mIngredientsMLD : MutableLiveData<Resource<IngredientResponse>> = MutableLiveData()
     fun getIngredients() = viewModelScope.launch(Dispatchers.IO) {
@@ -21,13 +20,5 @@ class IngredientsViewModel(
 
         val apiResult = getIngredientsUseCase.execute()
         mIngredientsMLD.postValue(apiResult)
-    }
-
-    val mRecommendationsMLD : MutableLiveData<Resource<RecommendationResponse>> = MutableLiveData()
-    fun getRecommendations(ingredients: String) = viewModelScope.launch(Dispatchers.IO) {
-        mRecommendationsMLD.postValue(Resource.loading(null))
-
-        val apiResult = getRecommendationUseCase.execute(ingredients)
-        mRecommendationsMLD.postValue(apiResult)
     }
 }

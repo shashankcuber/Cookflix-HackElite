@@ -22,11 +22,24 @@
         android:id="@+id/cookFragment"
         android:name="com.android.ranit.cookflix.presentation.ui.fragment.CookFragment"
         android:label="fragment_cook"
-        tools:layout="@layout/fragment_cook" />
+        tools:layout="@layout/fragment_cook" >
+        <action
+            android:id="@+id/action_cookFragment_to_recipeRecommendationFragment"
+            app:destination="@id/recipeRecommendationFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
     <fragment
         android:id="@+id/foodDetailsFragment"
         android:name="com.android.ranit.cookflix.presentation.ui.fragment.FoodDetailsFragment"
         android:label="fragment_food_details"
         tools:layout="@layout/fragment_food_details" />
+
+    <fragment
+        android:id="@+id/recipeRecommendationFragment"
+        android:name="com.android.ranit.cookflix.presentation.ui.fragment.RecipeRecommendationFragment"
+        android:label="fragment_recipe_recommendation"
+        tools:layout="@layout/fragment_recipe_recommendation" />
 
 </navigation>

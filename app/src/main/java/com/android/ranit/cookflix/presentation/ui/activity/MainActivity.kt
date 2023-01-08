@@ -13,6 +13,8 @@ import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModel
 import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModelFactory
 import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModel
 import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModelFactory
+import com.android.ranit.cookflix.presentation.viewmodel.recommendations.RecommendationsViewModel
+import com.android.ranit.cookflix.presentation.viewmodel.recommendations.RecommendationsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -27,6 +29,10 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var mIngredientsViewModelFactory: IngredientsViewModelFactory
     lateinit var mIngredientsViewModel: IngredientsViewModel
+
+    @Inject
+    lateinit var mRecommendationsViewModelFactory: RecommendationsViewModelFactory
+    lateinit var mRecommendationsViewModel: RecommendationsViewModel
 
     private lateinit var mBinding : ActivityMainBinding
     private lateinit var mNavHostFragment: NavHostFragment
@@ -65,5 +71,10 @@ class MainActivity : AppCompatActivity() {
             this,
             mIngredientsViewModelFactory
         )[IngredientsViewModel::class.java]
+
+        mRecommendationsViewModel = ViewModelProvider(
+            this,
+            mRecommendationsViewModelFactory
+        )[RecommendationsViewModel::class.java]
     }
 }
