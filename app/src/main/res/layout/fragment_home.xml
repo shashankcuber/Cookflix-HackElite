@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/dp_8"
+    android:background="@color/gray_800"
     tools:context=".presentation.ui.fragment.HomeFragment">
 
     <TextView
@@ -13,7 +14,6 @@
         android:layout_height="wrap_content"
         style="@style/Text.Header.Poppins.16"
         android:text="@string/popular_dishes_around_you"
-        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone" />

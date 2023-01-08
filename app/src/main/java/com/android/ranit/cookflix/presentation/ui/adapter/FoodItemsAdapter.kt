@@ -68,14 +68,14 @@ class FoodItemsAdapter: RecyclerView.Adapter<FoodItemsAdapter.ViewHolderFoodItem
 
     private fun computeCookingLevel(ingredientListSize: Int, binding: ItemFoodBinding): String {
         var level = ""
-        if (ingredientListSize >= 10) {
+        if (ingredientListSize >= 15) {
             level = "Hard"
             binding.tvLevel.background = ResourcesCompat.getDrawable(
                 binding.tvLevel.context.resources,
                 R.drawable.bg_difficulty_hard,
                 null
             )
-        } else if (ingredientListSize in 4..9) {
+        } else if (ingredientListSize in 9..14) {
             level = "Medium"
             binding.tvLevel.background = ResourcesCompat.getDrawable(
                 binding.tvLevel.context.resources,
