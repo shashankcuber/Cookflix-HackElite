@@ -6,7 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:strokeWidth="@dimen/dp_1"
     app:strokeColor="@color/stroke_color"
-    app:cardCornerRadius="@dimen/dp_8">
+    app:cardCornerRadius="@dimen/dp_8"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginStart="@dimen/dp_8"
+    android:layout_marginEnd="@dimen/dp_8"
+    android:layout_marginBottom="@dimen/dp_16" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -41,7 +45,7 @@
             android:id="@+id/tv_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_difficulty_level"
+            android:background="@drawable/bg_difficulty_medium"
             style="@style/Text.SubHeader.2.Poppins.12.White"
             android:padding="@dimen/dp_4"
             app:drawableEndCompat="@drawable/ic_baseline_star_24"

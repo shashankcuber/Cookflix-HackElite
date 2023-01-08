@@ -1,4 +1,5 @@
 package com.android.ranit.cookflix.data.model.response
 
-class FoodItemsResponse {
-}
+data class FoodItemsResponse(
+    val Result: List<Result>
+)

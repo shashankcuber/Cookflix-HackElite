@@ -6,4 +6,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="popular_dishes_around_you">Popular dishes around you</string>
+    <string name="level_hard">Hard</string>
 </resources>

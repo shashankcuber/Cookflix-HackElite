@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val getFoodItemsUseCase: GetFoodItemsUseCase
 ): ViewModel() {
-    private val mFoodItemsMLD : MutableLiveData<Resource<FoodItemsResponse>> = MutableLiveData()
+    val mFoodItemsMLD : MutableLiveData<Resource<FoodItemsResponse>> = MutableLiveData()
 
     fun getFoodItems() = viewModelScope.launch(Dispatchers.IO) {
         mFoodItemsMLD.postValue(Resource.loading(null))
