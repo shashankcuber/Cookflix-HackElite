@@ -3,5 +3,6 @@ from home_screen import views
 
 urlpatterns=[
    path('home/',views.get_food_list,name='home'),
-   path('ingrident_list/', views.get_ingrideints, name='ingredient')
+   path('ingredient_list/', views.get_ingredients, name='ingredient'),
+   path('recommendar/', views.recommendation, name='recommend'),
 ]

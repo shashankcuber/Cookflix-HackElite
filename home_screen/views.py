@@ -22,11 +22,19 @@ def get_food_list(request):
         return Response({"Error message":e},status=status.HTTP_400_BAD_REQUEST)
     
 @api_view(('GET',))
-def get_ingrideints(request):
+def get_ingredients(request):
     try:
-        return Response({"Result": list(pd.read_json('./data/ingredients.json')['ingredients'].values)}, status=status.HTTP_200_OK)
+        return Response({"Ingredient_list": list(pd.read_json('./data/ingredients.json')['ingredients'].values)}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"Error message":e},status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(('GET',))
+def recommendation(request):
+    try:
+        ingredient_list = request.GET.get("ingredients")
+        response = utils.recommendation_helper(ingredient_list)
+        return Response({"Recommendation_response":response},status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"Error message":e},status=status.HTTP_400_BAD_REQUEST)
 
 
