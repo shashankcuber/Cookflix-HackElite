@@ -7,4 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="popular_dishes_around_you">Popular dishes around you</string>
     <string name="level_hard">Hard</string>
+    <string name="select_ingredients">Select Ingredients</string>
+    <string name="selected_ingredients">Ingredients selected by you</string>
+    <string name="select_ingredients_from_the_dropdown">Select ingredients from the dropdown</string>
 </resources>

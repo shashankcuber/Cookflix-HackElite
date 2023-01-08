@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp_8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHeight_percent="0.04"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/auto_complete_ingredient"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintHeight_percent="0.07"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+    <TextView
+        android:id="@+id/tv_selected_ingredients"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_64"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHeight_percent="0.04"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/auto_complete_ingredient" />
+
+    <TextView
+        android:id="@+id/tv_one"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+
+    <TextView
+        android:id="@+id/tv_two"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_one"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+
+    <TextView
+        android:id="@+id/tv_three"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients" />
+
+    <TextView
+        android:id="@+id/tv_four"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_five"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_six"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.35"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_five"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_seven"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_six" />
+
+    <TextView
+        android:id="@+id/tv_eight"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_seven"
+        app:layout_constraintTop_toBottomOf="@id/tv_six" />
+
+    <TextView
+        android:id="@+id/tv_nine"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toEndOf="@id/tv_eight"
+        app:layout_constraintTop_toBottomOf="@id/tv_six" />
+
+    <TextView
+        android:id="@+id/tv_ten"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintWidth_percent="0.48"
+        app:layout_constraintHeight_percent="0.045"
+        android:background="@drawable/bg_shimmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_eight" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

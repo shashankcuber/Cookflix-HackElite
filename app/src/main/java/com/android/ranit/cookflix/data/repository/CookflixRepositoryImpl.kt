@@ -1,7 +1,7 @@
 package com.android.ranit.cookflix.data.repository
 
 import com.android.ranit.cookflix.data.model.response.FoodItemsResponse
-import com.android.ranit.cookflix.data.model.response.IngredientsResponse
+import com.android.ranit.cookflix.data.model.response.IngredientResponse
 import com.android.ranit.cookflix.data.repository.dataSource.NetworkDataSource
 import com.android.ranit.cookflix.data.utils.Resource
 import com.android.ranit.cookflix.domain.repository.CookflixRepository
@@ -30,12 +30,12 @@ class CookflixRepositoryImpl(private val networkDataSource: NetworkDataSource) :
     }
 
     // Ingredients
-    override suspend fun getIngredients(): Resource<IngredientsResponse> {
+    override suspend fun getIngredients(): Resource<IngredientResponse> {
         return ingredientsResponseToResource(networkDataSource.getIngredients())
     }
 
-    private fun ingredientsResponseToResource(apiResponse: Response<IngredientsResponse>)
-        : Resource<IngredientsResponse> {
+    private fun ingredientsResponseToResource(apiResponse: Response<IngredientResponse>)
+        : Resource<IngredientResponse> {
         if (apiResponse.isSuccessful) {
             apiResponse.body().let {
                 return Resource.success(it)

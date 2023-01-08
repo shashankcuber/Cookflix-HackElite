@@ -1,7 +1,9 @@
 package com.android.ranit.cookflix.presentation.di
 
 import com.android.ranit.cookflix.domain.usecase.GetFoodItemsUseCase
+import com.android.ranit.cookflix.domain.usecase.GetIngredientsUseCase
 import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModelFactory
+import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModelFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,5 +19,12 @@ class HiltViewModelFactoryModule {
     fun provideHomeViewModelFactory(getFoodItemsUseCase: GetFoodItemsUseCase)
             : HomeViewModelFactory {
         return HomeViewModelFactory(getFoodItemsUseCase)
+    }
+
+    @Singleton
+    @Provides
+    fun provideIngredientsViewModelFactory(getIngredientsUseCase: GetIngredientsUseCase)
+            : IngredientsViewModelFactory {
+        return IngredientsViewModelFactory(getIngredientsUseCase)
     }
 }

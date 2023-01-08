@@ -11,6 +11,8 @@ import com.android.ranit.cookflix.R
 import com.android.ranit.cookflix.databinding.ActivityMainBinding
 import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModel
 import com.android.ranit.cookflix.presentation.viewmodel.home.HomeViewModelFactory
+import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModel
+import com.android.ranit.cookflix.presentation.viewmodel.ingredients.IngredientsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -22,6 +24,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var mHomeViewModelFactory: HomeViewModelFactory
     lateinit var mHomeViewModel: HomeViewModel
 
+    @Inject
+    lateinit var mIngredientsViewModelFactory: IngredientsViewModelFactory
+    lateinit var mIngredientsViewModel: IngredientsViewModel
+
     private lateinit var mBinding : ActivityMainBinding
     private lateinit var mNavHostFragment: NavHostFragment
     private lateinit var mNavController: NavController
@@ -32,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         initViews()
-        initViewModel()
+        initViewModels()
     }
 
     private fun initViews() {
@@ -48,11 +54,16 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun initViewModel() {
-        Log.d(tag, "initViewModel() called")
+    private fun initViewModels() {
+        Log.d(tag, "initViewModels() called")
         mHomeViewModel = ViewModelProvider(
             this,
             mHomeViewModelFactory
         )[HomeViewModel::class.java]
+
+        mIngredientsViewModel = ViewModelProvider(
+            this,
+            mIngredientsViewModelFactory
+        )[IngredientsViewModel::class.java]
     }
 }
