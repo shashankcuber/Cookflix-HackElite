@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -52,6 +53,12 @@ class CookFragment : Fragment() {
         initRecyclerView()
         fetchDataFromNetwork()
         attachObserver()
+        attachListeners()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mSelectedIngredientsList.clear()
     }
 
     private fun initRecyclerView() {
@@ -59,7 +66,7 @@ class CookFragment : Fragment() {
         mBinding.rvIngredients.apply {
             adapter = mIngredientsAdapter
             layoutManager = StaggeredGridLayoutManager(
-                3,
+                2,
                 LinearLayoutManager.HORIZONTAL
             )
         }
@@ -77,6 +84,11 @@ class CookFragment : Fragment() {
                 State.LOADING -> {
                     mBinding.shimmerIngredients.visibility = View.VISIBLE
                     mBinding.shimmerIngredients.startShimmer()
+
+                    mBinding.tvHeader.visibility = View.INVISIBLE
+                    mBinding.acIngredients.visibility = View.INVISIBLE
+                    mBinding.tvSelectedIngredients.visibility = View.INVISIBLE
+                    mBinding.rvIngredients.visibility = View.INVISIBLE
                 }
 
                 State.SUCCESS -> {
@@ -84,25 +96,30 @@ class CookFragment : Fragment() {
                     mBinding.shimmerIngredients.visibility = View.GONE
 
                     mBinding.tvHeader.visibility = View.VISIBLE
-                    //mBinding.autoCompleteIngredient.visibility = View.VISIBLE
+                    mBinding.acIngredients.visibility = View.VISIBLE
                     mBinding.tvSelectedIngredients.visibility = View.VISIBLE
                     mBinding.rvIngredients.visibility = View.VISIBLE
 
+                    lateinit var acAdapter: ArrayAdapter<String>
                     it.data?.let { data ->
-                        //mIngredientsList = data.ingredientList.toList()
-                        Log.d(fragmentTag, "RRG attachObserver() called with: mIngredientsList size = ${data.ingredientList?.size}")
+                        mIngredientsList = data.ingredientList.toList()
+                        acAdapter = ArrayAdapter(
+                            requireContext(),
+                            R.layout.item_autocomplete,
+                            R.id.tv_item_autocomplete,
+                            mIngredientsList
+                        )
                     }
-
-                    // TODO: Adding selected item into ingredient list onClick
-                    mIngredientsAdapter.setData(mSelectedIngredientsList)
+                    mBinding.acIngredients.threshold = 2
+                    mBinding.acIngredients.setAdapter(acAdapter)
                 }
 
                 State.ERROR -> {
                     mBinding.shimmerIngredients.visibility = View.GONE
-                    mBinding.tvHeader.visibility = View.VISIBLE
-                    //mBinding.autoCompleteIngredient.visibility = View.VISIBLE
-                    mBinding.tvSelectedIngredients.visibility = View.VISIBLE
-                    mBinding.rvIngredients.visibility = View.VISIBLE
+                    mBinding.tvHeader.visibility = View.INVISIBLE
+                    mBinding.acIngredients.visibility = View.INVISIBLE
+                    mBinding.tvSelectedIngredients.visibility = View.INVISIBLE
+                    mBinding.rvIngredients.visibility = View.INVISIBLE
 
                     it.message?.let { message ->
                         Toast.makeText(
@@ -113,6 +130,24 @@ class CookFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun attachListeners() {
+        Log.d(fragmentTag, "attachListeners() called")
+        mBinding.acIngredients.onItemClickListener =
+            OnItemClickListener { parent, _, position, _ ->
+                val selection = parent.getItemAtPosition(position) as String
+
+                // Update adapter
+                if (selection.isNotEmpty()) {
+                    mSelectedIngredientsList.add(selection)
+                    mIngredientsAdapter.setData(mSelectedIngredientsList)
+                }
+            }
+
+        mBinding.btnRecommend.setOnClickListener {
+
         }
     }
 

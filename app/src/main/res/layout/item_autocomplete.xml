@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_item_autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:paddingStart="@dimen/dp_16"
+        android:paddingEnd="@dimen/dp_16"
+        android:gravity="center_vertical"
+        style="@style/Text.SubHeader.2.Poppins.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text= "Garlic"/>
+
+    <View
+        android:id="@+id/view_stroke"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_2"
+        android:background="@color/gray_800"
+        app:layout_constraintStart_toStartOf="@id/tv_item_autocomplete"
+        app:layout_constraintEnd_toEndOf="@id/tv_item_autocomplete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_autocomplete"/>
+
+    <View
+        android:id="@+id/view_stroke_start"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="32dp"
+        app:layout_constraintWidth_percent="0.8"
+        android:background="@color/gray_800"
+        app:layout_constraintStart_toStartOf="@id/tv_item_autocomplete"
+        app:layout_constraintTop_toTopOf="@id/tv_item_autocomplete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_autocomplete"/>
+
+    <View
+        android:id="@+id/view_stroke_end"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="32dp"
+        app:layout_constraintWidth_percent="0.8"
+        android:background="@color/gray_800"
+        app:layout_constraintStart_toEndOf="@id/tv_item_autocomplete"
+        app:layout_constraintTop_toTopOf="@id/tv_item_autocomplete"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_autocomplete"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,41 +26,48 @@
         style="@style/Text.Header.Poppins.16"
         android:text="@string/select_ingredients"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <AutoCompleteTextView-->
-<!--        android:id="@+id/auto_complete_ingredient"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/dp_0"-->
-<!--        android:layout_marginTop="@dimen/dp_16"-->
-<!--        app:layout_constraintHeight_percent="0.07"-->
-<!--        android:ems="5"-->
-<!--        android:hint="@string/select_ingredients_from_the_dropdown"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_header"-->
-<!--        android:visibility="invisible"/>-->
-
-    <TextView
-        android:id="@+id/tv_selected_ingredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Text.Header.Poppins.16"
-        android:text="@string/selected_ingredients"
-        android:layout_marginTop="@dimen/dp_64"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/auto_complete_ingredient"
-        android:visibility="invisible"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ingredients"
+    <AutoCompleteTextView
+        android:id="@+id/ac_ingredients"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_0"
         android:layout_marginTop="@dimen/dp_16"
-        app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients"
+        app:layout_constraintHeight_percent="0.07"
+        android:maxEms="5"
+        android:hint="@string/select_ingredients_from_the_dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+        <TextView
+            android:id="@+id/tv_selected_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Header.Poppins.16"
+            android:text="@string/selected_ingredients"
+            android:layout_marginTop="@dimen/dp_64"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ac_ingredients" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/tv_selected_ingredients"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_recommend"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:text="@string/recommend"
+        android:background="@drawable/bg_drawable_ingredient"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

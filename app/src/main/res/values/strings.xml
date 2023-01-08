@@ -10,4 +10,5 @@
     <string name="select_ingredients">Select Ingredients</string>
     <string name="selected_ingredients">Ingredients selected by you</string>
     <string name="select_ingredients_from_the_dropdown">Select ingredients from the dropdown</string>
+    <string name="recommend">Recommend</string>
 </resources>
