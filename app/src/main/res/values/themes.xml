@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Cookflix" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/red_500</item>
+        <item name="colorPrimaryVariant">@color/red_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_200</item>
@@ -17,13 +17,24 @@
     <!-- Text Header -->
     <style name="Text.Header.Poppins.16" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black_800</item>
-        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:fontFamily">@font/poppins_black</item>
         <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <!-- Text SubHeader 1 -->
-    <style name="Text.SubHeader.1.Poppins.12" parent="Widget.AppCompat.TextView">
+    <style name="Text.SubHeader.1.Poppins.16" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_800</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <!-- Text SubHeader 2 -->
+    <style name="Text.SubHeader.2.Poppins.12" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black_600</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textSize">@dimen/sp_12</item>
@@ -33,11 +44,31 @@
         <item name="singleLine">true</item>
     </style>
 
-    <!-- Text SubHeader 2 -->
-    <style name="Text.SubHeader.2.Poppins.8" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/black_600</item>
+    <style name="Text.SubHeader.2.Poppins.12.Black400" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_400</item>
         <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">@dimen/sp_8</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="Text.SubHeader.2.Poppins.12.White" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <!-- Text SubHeader 2 -->
+    <style name="Text.SubHeader.2.Poppins.10.Black400" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black_400</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 </resources>

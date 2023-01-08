@@ -12,4 +12,10 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/cookFragment"
+        android:name="com.android.ranit.cookflix.presentation.ui.fragment.CookFragment"
+        android:label="fragment_cook"
+        tools:layout="@layout/fragment_cook" />
+
 </navigation>

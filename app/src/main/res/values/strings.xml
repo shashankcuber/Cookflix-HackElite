@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Cookflix</string>
     <string name="home_tab">Home</string>
+    <string name="cook_tab">Cook</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular_dishes_around_you">Popular dishes around you</string>
 </resources>

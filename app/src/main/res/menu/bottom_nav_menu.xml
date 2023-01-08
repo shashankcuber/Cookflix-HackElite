@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/topHeadlinesFragment"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="@string/home_tab" />
+
+    <item
+        android:id="@+id/cookFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_cook"
+        android:title="@string/cook_tab" />
 </menu>
